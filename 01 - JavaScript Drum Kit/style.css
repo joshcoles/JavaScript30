@@ -9,10 +9,15 @@ body,html {
   font-family: sans-serif;
 }
 
+#a-key {
+  color: red;
+  display: block;
+}
+
 .keys {
   display: flex;
   flex: 1;
-  min-height: 100vh;
+  min-height: 500px;
   align-items: center;
   justify-content: center;
 }
