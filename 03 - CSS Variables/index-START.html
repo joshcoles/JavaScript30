@@ -24,7 +24,7 @@
 
     :root {
       --base: #ffc600;
-      --spacing: 50px;
+      --spacing: 10px;
       --blur: 10px;
     }
 
@@ -61,12 +61,18 @@
   </style>
 
   <script>
-
+    // get inputs
     const inputs = document.querySelectorAll('.controls input');
 
+    // to be called on every change of any input
     function handleUpdate() {
+
+      // this is pulled from the data-sizing attribute that is found on both sliders but 
+      // not on colour picker. 
       const suffix = this.dataset.sizing || '';
-      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+
+      // magic
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);      
     }
 
     inputs.forEach(input => input.addEventListener('change', handleUpdate));
